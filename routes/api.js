@@ -42,7 +42,7 @@ router.get("/random", async (req, res, next) => {
 
 // CREATE QUESTION (ROUTEGUARDED)
 router.post("/create", async (req, res, next) => {
-  const { optionA, optionB, category, title } = req.body;
+  const { optionA, optionB, category, title,authorID } = req.body;
   const authorID = req.session.user;
   try {
     const insertedQuestion = await Question.create({
