@@ -43,7 +43,6 @@ router.get("/random", async (req, res, next) => {
 // CREATE QUESTION (ROUTEGUARDED)
 router.post("/create", async (req, res, next) => {
   const { optionA, optionB, category, title,authorID } = req.body;
-  const authorID = req.session.user;
   try {
     const insertedQuestion = await Question.create({
       optionA,
@@ -88,7 +87,6 @@ router.post(
 
 //DELETE QUESTIONS with respective answers
 router.post("/delete/:id", async (req, res, next) => {
-  const currentUser = req.session.user;
   const currentQuestion = req.params.id;
 
   try {
