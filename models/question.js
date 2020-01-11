@@ -22,8 +22,8 @@ const schema = new mongoose.Schema(
       required: true
     },
     authorID: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User"
+      type: String,
+      required:true
     },
     answers:
       [
